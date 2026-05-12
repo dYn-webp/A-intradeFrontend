@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-aurum-gold: #D4AF37;
+  --color-aurum-goldLight: #F3E5AB;
+  --color-aurum-dark: #0B0E14;
+  --color-aurum-panel: #151922;
+  --color-aurum-blue: #1E3A8A;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-aurum-dark);
+    color: white;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  
+  ::selection {
+    background-color: var(--color-aurum-gold);
+    color: black;
+  }
+}
