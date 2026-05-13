@@ -1,115 +1,119 @@
 "use client";
 
-import { 
-  LayoutDashboard, 
-  // Broker Icons
-  LineChart, ArrowRightLeft, TerminalSquare,
-  // Prop Firm Icons
-  Target, Trophy, ShieldAlert,
-  // Investment Icons
-  Briefcase, Users, TrendingUp,
-  // General Icons
-  Wallet, User, LogOut, ChevronDown,
-  Shield
-} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { HandCoins } from "lucide-react";
+import { 
+  LayoutDashboard, Wallet, Shield, Trophy, 
+  BarChart3, Users, Settings, User, LogOut, X, ArrowDownUp
+} from "lucide-react";
 
-const menuGroups = [
-  {
-    title: "MAIN",
-    items: [
-      { icon: LayoutDashboard, label: "Overview", href: "/dashboard" },
-      { icon: Wallet, label: "My Wallet", href: "/dashboard/wallet" },
-    ]
-  },
-  {
-    title: "BROKERAGE",
-    items: [
-      { icon: LineChart, label: "Live Accounts", href: "/dashboard/broker/accounts" },
-      { icon: ArrowRightLeft, label: "Deposit & Withdraw", href: "/dashboard/broker/funding" },
-      { icon: TerminalSquare, label: "Trading Platforms", href: "/dashboard/broker/platforms" },
-    ]
-  },
-  {
-    title: "PROP TRADING",
-    items: [
-      { icon: Target, label: "Challenges", href: "/dashboard/prop/challenges" },
-      { icon: Trophy, label: "Leaderboard", href: "/dashboard/prop/leaderboard" },
-      { icon: ShieldAlert, label: "Risk Monitor", href: "/dashboard/prop/risk" },
-    ]
-  },
-  {
-    title: "INVESTMENT & WEALTH",
-    items: [
-      { icon: LayoutDashboard, label: "Portfolio", href: "/dashboard/invest/portfolio" },
-      { icon: LineChart, label: "Market & Invest", href: "/dashboard/invest/market" }, // <-- Menu Baru
-      { icon: Briefcase, label: "PAMM / MAM", href: "/dashboard/invest/pamm" },
-      { icon: TrendingUp, label: "Staking Vaults", href: "/dashboard/invest/vaults" },
-    ]
-  },
-  {
-    title: "SETTINGS",
-    items: [
-      { icon: User, label: "Profile & KYC", href: "/dashboard/profile" },
-      { icon: Shield, label: "Settings", href: "/dashboard/settings" }, 
-    ]
-  }
-];
+interface SidebarProps {
+  isOpen: boolean;
+  setIsOpen: (val: boolean) => void;
+}
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
   const pathname = usePathname();
 
+  // Pemisahan Kategori Menu yang Tegas
+  const propFirmMenu = [
+    { name: "Terminal Trading", icon: LayoutDashboard, path: "/dashboard" },
+    { name: "Micro Challenges", icon: Trophy, path: "/dashboard/prop/challenges" },
+    { name: "Risk Manager", icon: Shield, path: "/dashboard/prop/risk" },
+  ];
+
+  const investMenu = [
+    { name: "Pasar & Instrumen", icon: BarChart3, path: "/dashboard/invest/market" },
+    { name: "Portofolio Aktif", icon: Wallet, path: "/dashboard/invest/portfolio" },
+    { name: "Copy-Trade", icon: Users, path: "/dashboard/invest/copy-trade" },
+  ];
+
+  const financeMenu = [
+    { name: "Depo / WD", icon: ArrowDownUp, path: "/dashboard/wallet" },
+  ];
+
   return (
-    <aside className="w-64 h-screen bg-aurum-panel border-r border-white/5 flex flex-col fixed left-0 top-0 z-40 overflow-hidden">
-      {/* Logo Area */}
-      <div className="h-20 flex-shrink-0 flex items-center px-8 border-b border-white/5 bg-aurum-dark/50">
-        <div className="text-2xl font-bold tracking-tighter text-white">
-          AURUM<span className="text-aintrade-gold">.</span>
+    <div className={`fixed inset-y-0 left-0 z-50 w-64 bg-[#0a0c10] border-r border-white/5 flex flex-col justify-between transform transition-transform duration-300 ease-in-out md:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:fixed`}>
+      
+      {/* Header Sidebar */}
+      <div className="px-6 py-6 md:py-8 flex justify-between items-center">
+        <div className="flex items-center space-x-3">
+          <div className="w-8 h-8 bg-[#D4AF37] rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+            <span className="text-black font-black text-xl italic">A</span>
+          </div>
+          <div>
+            <span className="text-xl font-black tracking-tighter text-white">
+              A&apos;INTRADE<span className="text-[#D4AF37]">.</span>
+            </span>
+            <p className="text-[8px] text-gray-500 font-bold mt-0.5 tracking-[0.2em] uppercase">Mandor AI Collective</p>
+          </div>
+        </div>
+        {/* Tombol Tutup di HP */}
+        <button className="md:hidden text-gray-400 hover:text-white" onClick={() => setIsOpen(false)}>
+          <X className="w-5 h-5" />
+        </button>
+      </div>
+
+      {/* Area Menu Berjalan */}
+      <div className="flex-1 overflow-y-auto px-4 scrollbar-hide space-y-6 pb-6">
+        
+        {/* Bagian 1: Micro Prop-Firm */}
+        <div>
+          <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest px-4 mb-2">Micro Prop-Firm</div>
+          <div className="space-y-1">
+            {propFirmMenu.map((item) => {
+              const isActive = pathname === item.path;
+              return (
+                <Link key={item.name} href={item.path} onClick={() => setIsOpen(false)}
+                  className={`flex items-center space-x-3 px-4 py-2.5 rounded-xl transition-all text-xs font-bold tracking-wider
+                    ${isActive ? 'bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/20 shadow-[inset_0_0_10px_rgba(212,175,55,0.1)]' : 'text-gray-400 hover:text-gray-200 hover:bg-white/5 border border-transparent'}`}>
+                  <item.icon className="w-4 h-4" /><span>{item.name}</span>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Bagian 2: Vault & Investasi */}
+        <div>
+          <div className="text-[10px] font-bold text-[#D4AF37] uppercase tracking-widest px-4 mb-2">Dip-Funding / Invest</div>
+          <div className="space-y-1">
+            {investMenu.map((item) => {
+              const isActive = pathname === item.path;
+              return (
+                <Link key={item.name} href={item.path} onClick={() => setIsOpen(false)}
+                  className={`flex items-center space-x-3 px-4 py-2.5 rounded-xl transition-all text-xs font-bold tracking-wider
+                    ${isActive ? 'bg-white/10 text-white border border-white/20' : 'text-gray-400 hover:text-gray-200 hover:bg-white/5 border border-transparent'}`}>
+                  <item.icon className="w-4 h-4" /><span>{item.name}</span>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Bagian 3: Keuangan */}
+        <div>
+          <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest px-4 mb-2">Keuangan</div>
+          <div className="space-y-1">
+            {financeMenu.map((item) => (
+               <Link key={item.name} href={item.path} onClick={() => setIsOpen(false)}
+                  className={`flex items-center space-x-3 px-4 py-2.5 rounded-xl transition-all text-xs font-bold tracking-wider text-gray-400 hover:text-gray-200 hover:bg-white/5`}>
+                  <item.icon className="w-4 h-4" /><span>{item.name}</span>
+               </Link>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Navigation Menu */}
-      <nav className="flex-1 overflow-y-auto py-6 px-4 space-y-6 custom-scrollbar">
-        {menuGroups.map((group, idx) => (
-          <div key={idx}>
-            <h4 className="px-4 text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">
-              {group.title}
-            </h4>
-            <div className="space-y-1">
-              {group.items.map((item) => {
-                const Icon = item.icon;
-                const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
-                
-                return (
-                  <Link 
-                    key={item.label} 
-                    href={item.href}
-                    className={`flex items-center space-x-3 px-4 py-2.5 rounded-xl transition-all duration-200 group ${
-                      isActive 
-                        ? "bg-gradient-to-r from-aintrade-gold/10 to-transparent text-aintrade-gold border-l-2 border-aintrade-gold" 
-                        : "text-gray-400 hover:text-white hover:bg-white/5 border-l-2 border-transparent"
-                    }`}
-                  >
-                    <Icon className={`w-4 h-4 ${isActive ? "text-aintrade-gold" : "text-gray-500 group-hover:text-gray-300"}`} />
-                    <span className="font-medium text-sm">{item.label}</span>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        ))}
-      </nav>
-
-      {/* Logout Button */}
-      <div className="p-4 border-t border-white/5 flex-shrink-0 bg-aurum-dark/30">
-        <button className="flex items-center space-x-3 px-4 py-3 w-full text-left text-gray-400 hover:text-red-400 hover:bg-red-400/10 rounded-xl transition-colors">
-          <LogOut className="w-4 h-4" />
-          <span className="font-medium text-sm">Logout</span>
+      {/* Area Bawah */}
+      <div className="px-4 py-4 border-t border-white/5 bg-[#151922]/50 space-y-1">
+        <Link href="/dashboard/profile" className="flex items-center space-x-3 px-4 py-2.5 rounded-xl transition-all text-xs font-bold tracking-wider text-gray-400 hover:text-gray-200 hover:bg-white/5">
+          <User className="w-4 h-4" /><span>Profile</span>
+        </Link>
+        <button className="w-full flex items-center space-x-3 px-4 py-2.5 rounded-xl transition-all text-xs font-bold tracking-wider text-red-500/80 hover:text-red-400 hover:bg-red-500/10 mt-2">
+          <LogOut className="w-4 h-4" /><span>Keluar</span>
         </button>
       </div>
-    </aside>
+    </div>
   );
 }
