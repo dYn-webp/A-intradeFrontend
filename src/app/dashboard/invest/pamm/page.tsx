@@ -9,8 +9,8 @@ export default function PammPage() {
         {[1, 2].map((i) => (
           <div key={i} className="bg-aurum-panel border border-white/5 rounded-2xl p-6">
             <div className="flex justify-between items-start mb-6">
-              <div className="w-12 h-12 bg-aurum-gold/10 rounded-full flex items-center justify-center">
-                <BarChart className="text-aurum-gold w-6 h-6" />
+              <div className="w-12 h-12 bg-aintrade-gold/10 rounded-full flex items-center justify-center">
+                <BarChart className="text-aintrade-gold w-6 h-6" />
               </div>
               <div className="text-right">
                 <div className="text-xs text-gray-500">Fund Size</div>
@@ -24,7 +24,7 @@ export default function PammPage() {
                  <div className="text-[10px] text-gray-500 uppercase">Min. Invest</div>
                  <div className="font-bold text-white">$1,000</div>
                </div>
-               <button className="px-4 py-2 bg-aurum-gold text-black text-xs font-bold rounded-lg">Invest Now</button>
+               <button className="px-4 py-2 bg-aintrade-gold text-black text-xs font-bold rounded-lg">Invest Now</button>
             </div>
           </div>
         ))}

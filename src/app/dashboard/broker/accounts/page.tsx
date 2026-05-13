@@ -7,7 +7,7 @@ export default function BrokerAccounts() {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold">Brokerage Accounts</h1>
-        <button className="bg-aurum-gold text-black px-4 py-2 rounded-lg font-bold text-sm flex items-center">
+        <button className="bg-aintrade-gold text-black px-4 py-2 rounded-lg font-bold text-sm flex items-center">
           <Plus className="w-4 h-4 mr-2" /> Open Live Account
         </button>
       </div>

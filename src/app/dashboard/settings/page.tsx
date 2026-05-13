@@ -34,7 +34,7 @@ export default function SettingsPage() {
           <div className="bg-aurum-panel border border-white/5 rounded-2xl overflow-hidden">
             <div className="p-6 border-b border-white/5 bg-white/5">
               <h3 className="font-bold text-white flex items-center">
-                <Globe className="w-4 h-4 mr-2 text-aurum-gold" /> Personalization
+                <Globe className="w-4 h-4 mr-2 text-aintrade-gold" /> Personalization
               </h3>
             </div>
             
@@ -42,8 +42,8 @@ export default function SettingsPage() {
               {/* Mata Uang Setting */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 rounded-xl bg-aurum-gold/10 flex items-center justify-center border border-aurum-gold/20">
-                    <Coins className="text-aurum-gold w-5 h-5" />
+                  <div className="w-10 h-10 rounded-xl bg-aintrade-gold/10 flex items-center justify-center border border-aintrade-gold/20">
+                    <Coins className="text-aintrade-gold w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-sm font-bold text-white">Mata Uang Utama</div>
@@ -52,7 +52,7 @@ export default function SettingsPage() {
                 </div>
                 <button 
                   onClick={toggleCurrency}
-                  className="px-4 py-2 bg-black/50 border border-white/10 rounded-lg text-sm font-bold text-aurum-gold hover:border-aurum-gold/50 transition-all flex items-center space-x-2"
+                  className="px-4 py-2 bg-black/50 border border-white/10 rounded-lg text-sm font-bold text-aintrade-gold hover:border-aintrade-gold/50 transition-all flex items-center space-x-2"
                 >
                   <span>{currency}</span>
                   <ChevronRight className="w-4 h-4" />
@@ -91,11 +91,11 @@ export default function SettingsPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1">
                   <label className="text-[10px] text-gray-500 font-bold ml-1 uppercase">Full Name</label>
-                  <input type="text" defaultValue="Adinda Ardiansyah" className="w-full bg-black/30 border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:border-aurum-gold outline-none" />
+                  <input type="text" defaultValue="Adinda Ardiansyah" className="w-full bg-black/30 border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:border-aintrade-gold outline-none" />
                 </div>
                 <div className="space-y-1">
                   <label className="text-[10px] text-gray-500 font-bold ml-1 uppercase">Email</label>
-                  <input type="email" defaultValue="adinda@aurum.cap" className="w-full bg-black/30 border border-white/5 rounded-xl px-4 py-3 text-sm text-gray-500 focus:border-aurum-gold outline-none" disabled />
+                  <input type="email" defaultValue="adinda@aurum.cap" className="w-full bg-black/30 border border-white/5 rounded-xl px-4 py-3 text-sm text-gray-500 focus:border-aintrade-gold outline-none" disabled />
                 </div>
               </div>
               <button className="px-6 py-2.5 bg-white text-black font-bold text-xs rounded-lg hover:bg-gray-200 transition">
@@ -114,9 +114,9 @@ export default function SettingsPage() {
 function SettingNav({ icon: Icon, label, active = false }: any) {
   return (
     <button className={`flex items-center space-x-3 w-full px-4 py-3 rounded-xl transition-all ${active ? 'bg-white/5 text-white border border-white/10 shadow-lg' : 'text-gray-500 hover:text-gray-300'}`}>
-      <Icon className={`w-4 h-4 ${active ? 'text-aurum-gold' : ''}`} />
+      <Icon className={`w-4 h-4 ${active ? 'text-aintrade-gold' : ''}`} />
       <span className="text-xs font-bold uppercase tracking-widest">{label}</span>
-      {active && <Check className="w-3 h-3 ml-auto text-aurum-gold" />}
+      {active && <Check className="w-3 h-3 ml-auto text-aintrade-gold" />}
     </button>
   );
 }

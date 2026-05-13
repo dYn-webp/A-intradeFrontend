@@ -1,5 +1,9 @@
 "use client";
 
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useCurrency } from "@/components/CurrencyProvider";
+
 import { 
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer 
 } from 'recharts';
@@ -18,9 +22,26 @@ const performanceData = [
 ];
 
 export default function DashboardPage() {
-  const formatIDR = (value: number) => {
-    return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(value);
-  };
+  const { formatMoney } = useCurrency();
+  const [userData, setUserData] = useState({
+    fullName: "Loading...",
+    walletBalance: 0,
+    tradingAccount: { currentBalance: 0, initialBalance: 0 }
+  });
+
+  // REAL DATA FETCHING
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Ganti URL ini dengan endpoint API backend Anda nantinya
+        const response = await axios.get("http://localhost:3001/user/profile"); 
+        setUserData(response.data);
+      } catch (error) {
+        console.error("Gagal mengambil data nyata:", error);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className="space-y-6 max-w-7xl mx-auto pb-10">
@@ -35,7 +56,7 @@ export default function DashboardPage() {
           <button className="px-4 py-2 bg-aurum-panel border border-white/10 rounded-lg text-sm text-white hover:bg-white/5 transition flex items-center">
             <Bot className="w-4 h-4 mr-2 text-aurum-blue" /> AI Insights
           </button>
-          <button className="px-4 py-2 bg-aurum-gold text-black font-bold rounded-lg text-sm hover:bg-aurum-goldLight transition shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+          <button className="px-4 py-2 bg-aintrade-gold text-black font-bold rounded-lg text-sm hover:bg-aintrade-goldLight transition shadow-[0_0_15px_rgba(212,175,55,0.3)]">
             Deposit Wallet
           </button>
         </div>
@@ -46,7 +67,7 @@ export default function DashboardPage() {
         
         {/* Micro Account Overview */}
         <div className="bg-aurum-panel border border-white/5 rounded-2xl p-6 relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-aurum-gold/5 rounded-full blur-2xl -mr-10 -mt-10"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-aintrade-gold/5 rounded-full blur-2xl -mr-10 -mt-10"></div>
           <div className="flex justify-between items-start mb-4">
             <h3 className="text-gray-400 font-medium text-sm">Simulasi Akun Mikro</h3>
             <span className="text-[10px] bg-green-500/20 text-green-500 px-2 py-1 rounded font-bold">PHASE 1</span>
@@ -72,7 +93,7 @@ export default function DashboardPage() {
             </div>
             <div>
               <div className="text-[10px] text-gray-500 uppercase tracking-widest">Status</div>
-              <div className="text-xs font-bold text-aurum-gold flex items-center mt-0.5">
+              <div className="text-xs font-bold text-aintrade-gold flex items-center mt-0.5">
                 <ShieldCheck className="w-3 h-3 mr-1" /> AMAN
               </div>
             </div>
@@ -125,11 +146,11 @@ export default function DashboardPage() {
               <span className="text-xs text-green-500 font-bold">{formatIDR(40000)}</span>
             </div>
             <div className="w-full bg-black rounded-full h-2.5 mb-2 border border-white/5">
-              <div className="bg-gradient-to-r from-aurum-gold to-yellow-400 h-2.5 rounded-full shadow-[0_0_10px_rgba(212,175,55,0.5)]" style={{ width: '85%' }}></div>
+              <div className="bg-gradient-to-r from-aintrade-gold to-yellow-400 h-2.5 rounded-full shadow-[0_0_10px_rgba(212,175,55,0.5)]" style={{ width: '85%' }}></div>
             </div>
             <div className="text-xs text-gray-400 flex justify-between mt-3">
               <span>Tercapai: {formatIDR(34000)}</span>
-              <span className="text-aurum-gold">Hampir Lolos!</span>
+              <span className="text-aintrade-gold">Hampir Lolos!</span>
             </div>
           </div>
 
@@ -208,7 +229,7 @@ export default function DashboardPage() {
           <div className="bg-aurum-panel border border-white/5 rounded-2xl p-6">
              <div className="flex justify-between items-center mb-5">
               <h3 className="text-white font-medium text-sm flex items-center">
-                <Trophy className="w-4 h-4 text-aurum-gold mr-2" /> Top Retail Traders
+                <Trophy className="w-4 h-4 text-aintrade-gold mr-2" /> Top Retail Traders
               </h3>
             </div>
             <div className="space-y-3">
@@ -219,7 +240,7 @@ export default function DashboardPage() {
               ].map((trader, i) => (
                 <div key={i} className="flex items-center justify-between text-sm">
                   <div className="flex items-center space-x-3">
-                    <span className={`font-bold w-4 ${i === 0 ? 'text-aurum-gold' : 'text-gray-500'}`}>{i+1}</span>
+                    <span className={`font-bold w-4 ${i === 0 ? 'text-aintrade-gold' : 'text-gray-500'}`}>{i+1}</span>
                     <span className="text-gray-300">{trader.name}</span>
                   </div>
                   <div className="text-right">
@@ -232,11 +253,11 @@ export default function DashboardPage() {
           </div>
 
           {/* Payout Section */}
-          <div className="bg-gradient-to-br from-aurum-panel to-black border border-aurum-gold/30 rounded-2xl p-6 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-aurum-gold/10 blur-xl"></div>
+          <div className="bg-gradient-to-br from-aurum-panel to-black border border-aintrade-gold/30 rounded-2xl p-6 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-aintrade-gold/10 blur-xl"></div>
             <h3 className="text-gray-400 text-xs mb-1 uppercase tracking-widest font-bold">Siap Dicairkan</h3>
             <div className="text-2xl font-black text-white mb-4">{formatIDR(40000)}</div>
-            <button className="w-full py-2.5 bg-aurum-gold text-black text-sm font-bold rounded-lg hover:bg-aurum-goldLight transition flex justify-center items-center">
+            <button className="w-full py-2.5 bg-aintrade-gold text-black text-sm font-bold rounded-lg hover:bg-aintrade-goldLight transition flex justify-center items-center">
               Tarik ke GoPay / BCA
               <ChevronRight className="w-4 h-4 ml-1" />
             </button>

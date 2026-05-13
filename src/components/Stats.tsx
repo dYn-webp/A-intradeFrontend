@@ -23,7 +23,7 @@ export default function Stats() {
               className="py-6 md:py-0 flex flex-col items-center justify-center"
             >
               <h3 className="text-4xl md:text-5xl font-bold text-white mb-2 tracking-tight">
-                {stat.value}<span className="text-aurum-gold">{stat.suffix}</span>
+                {stat.value}<span className="text-aintrade-gold">{stat.suffix}</span>
               </h3>
               <p className="text-gray-400 uppercase tracking-widest text-xs font-semibold">
                 {stat.label}

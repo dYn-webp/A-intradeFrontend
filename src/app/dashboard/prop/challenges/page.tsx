@@ -7,11 +7,11 @@ export default function PropChallenges() {
     <div className="space-y-6">
       <h1 className="text-2xl font-bold">Active Challenges</h1>
       
-      <div className="bg-aurum-panel border border-aurum-gold/30 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8">
+      <div className="bg-aurum-panel border border-aintrade-gold/30 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8">
         <div className="relative w-32 h-32 flex items-center justify-center">
           <svg className="w-full h-full transform -rotate-90">
             <circle cx="64" cy="64" r="58" stroke="currentColor" strokeWidth="8" fill="transparent" className="text-white/5" />
-            <circle cx="64" cy="64" r="58" stroke="currentColor" strokeWidth="8" fill="transparent" className="text-aurum-gold" strokeDasharray="364.4" strokeDashoffset="91.1" />
+            <circle cx="64" cy="64" r="58" stroke="currentColor" strokeWidth="8" fill="transparent" className="text-aintrade-gold" strokeDasharray="364.4" strokeDashoffset="91.1" />
           </svg>
           <div className="absolute flex flex-col items-center">
             <span className="text-xl font-bold">75%</span>
@@ -21,7 +21,7 @@ export default function PropChallenges() {
 
         <div className="flex-1 space-y-4">
           <div className="flex items-center space-x-2">
-            <Target className="w-5 h-5 text-aurum-gold" />
+            <Target className="w-5 h-5 text-aintrade-gold" />
             <h2 className="text-xl font-bold">$100,000 Elite Challenge</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

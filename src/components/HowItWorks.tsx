@@ -50,7 +50,7 @@ export default function HowItWorks() {
                 className="flex flex-col items-center text-center p-6"
               >
                 <div className="w-20 h-20 rounded-2xl bg-aurum-panel border border-white/10 flex items-center justify-center mb-6 shadow-lg shadow-aurum-blue/10">
-                  <Icon className="w-10 h-10 text-aurum-gold" />
+                  <Icon className="w-10 h-10 text-aintrade-gold" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>

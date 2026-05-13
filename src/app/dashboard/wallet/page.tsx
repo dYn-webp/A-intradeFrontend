@@ -7,21 +7,21 @@ export default function WalletPage() {
       <h1 className="text-2xl font-bold">My Wallet</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-6">
-          <div className="bg-gradient-to-br from-aurum-gold/20 to-aurum-blue/20 border border-aurum-gold/30 rounded-3xl p-8 h-56 flex flex-col justify-between relative overflow-hidden">
+          <div className="bg-gradient-to-br from-aintrade-gold/20 to-aurum-blue/20 border border-aintrade-gold/30 rounded-3xl p-8 h-56 flex flex-col justify-between relative overflow-hidden">
              <div className="relative z-10">
-               <p className="text-aurum-gold text-sm font-medium">Total Balance</p>
+               <p className="text-aintrade-gold text-sm font-medium">Total Balance</p>
                <h2 className="text-5xl font-black mt-2">$124,500.00</h2>
              </div>
              <div className="flex justify-between items-end relative z-10">
                <p className="font-mono text-gray-400">**** **** **** 8829</p>
-               <div className="text-xl font-bold italic tracking-tighter">AURUM<span className="text-aurum-gold">CARD</span></div>
+               <div className="text-xl font-bold italic tracking-tighter">AURUM<span className="text-aintrade-gold">CARD</span></div>
              </div>
-             <div className="absolute -right-10 -bottom-10 w-64 h-64 bg-aurum-gold/10 rounded-full blur-3xl"></div>
+             <div className="absolute -right-10 -bottom-10 w-64 h-64 bg-aintrade-gold/10 rounded-full blur-3xl"></div>
           </div>
           
           <div className="bg-aurum-panel border border-white/5 rounded-2xl p-6">
             <div className="flex items-center space-x-2 mb-6">
-              <History className="w-5 h-5 text-aurum-gold" />
+              <History className="w-5 h-5 text-aintrade-gold" />
               <h3 className="font-bold">Recent Transactions</h3>
             </div>
             <div className="space-y-4">
@@ -47,7 +47,7 @@ export default function WalletPage() {
           <div className="bg-aurum-panel border border-white/5 rounded-2xl p-6">
             <h3 className="font-bold mb-4">Quick Actions</h3>
             <div className="grid grid-cols-2 gap-4">
-              <button className="p-4 bg-aurum-gold/10 border border-aurum-gold/20 rounded-xl hover:bg-aurum-gold/20 transition flex flex-col items-center text-aurum-gold">
+              <button className="p-4 bg-aintrade-gold/10 border border-aintrade-gold/20 rounded-xl hover:bg-aintrade-gold/20 transition flex flex-col items-center text-aintrade-gold">
                 <ArrowUpRight className="mb-2" /> <span className="text-xs font-bold">Send</span>
               </button>
               <button className="p-4 bg-aurum-blue/10 border border-aurum-blue/20 rounded-xl hover:bg-aurum-blue/20 transition flex flex-col items-center text-aurum-blue">

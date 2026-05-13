@@ -5,7 +5,7 @@ export default function LeaderboardPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center space-x-3">
-        <Trophy className="text-aurum-gold w-6 h-6" />
+        <Trophy className="text-aintrade-gold w-6 h-6" />
         <h1 className="text-2xl font-bold">Global Leaderboard</h1>
       </div>
       <div className="bg-aurum-panel border border-white/5 rounded-2xl overflow-hidden">

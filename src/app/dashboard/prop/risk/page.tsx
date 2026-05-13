@@ -17,7 +17,7 @@ export default function RiskPage() {
           </ul>
         </div>
         <div className="bg-aurum-panel border border-white/5 p-6 rounded-2xl">
-           <div className="flex items-center space-x-2 text-aurum-gold mb-4">
+           <div className="flex items-center space-x-2 text-aintrade-gold mb-4">
             <Info className="w-5 h-5" />
             <h3 className="font-bold">Trading Rules</h3>
           </div>

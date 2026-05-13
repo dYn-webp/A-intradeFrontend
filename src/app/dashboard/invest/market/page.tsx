@@ -26,7 +26,7 @@ export default function InvestMarketPage() {
     <div className="space-y-6 max-w-7xl mx-auto pb-10">
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold uppercase tracking-wider">Invest Market</h1>
-        <div className="flex items-center w-64 bg-aurum-panel rounded-full px-4 py-2 border border-white/5 focus-within:border-aurum-gold/50">
+        <div className="flex items-center w-64 bg-aurum-panel rounded-full px-4 py-2 border border-white/5 focus-within:border-aintrade-gold/50">
           <Search className="w-4 h-4 text-gray-500" />
           <input type="text" placeholder="Search BBCA, Gold..." className="bg-transparent border-none outline-none text-sm text-white px-3 w-full" />
         </div>
@@ -37,7 +37,7 @@ export default function InvestMarketPage() {
         {/* Kolom Kiri: Daftar Aset */}
         <div className="lg:col-span-2 bg-aurum-panel border border-white/5 rounded-2xl overflow-hidden">
           <div className="flex space-x-6 px-6 py-4 border-b border-white/5 text-sm font-medium text-gray-400">
-            <button className="text-aurum-gold border-b-2 border-aurum-gold pb-4 -mb-4">All Assets</button>
+            <button className="text-aintrade-gold border-b-2 border-aintrade-gold pb-4 -mb-4">All Assets</button>
             <button className="hover:text-white transition">Stocks</button>
             <button className="hover:text-white transition">Commodities</button>
             <button className="hover:text-white transition">Crypto</button>
@@ -95,7 +95,7 @@ export default function InvestMarketPage() {
         <div className="bg-aurum-panel border border-white/5 rounded-2xl p-6 h-fit sticky top-24">
           <h2 className="text-lg font-bold mb-6 pb-4 border-b border-white/5 flex justify-between items-center">
             <span>Invest in {selectedAsset.id}</span>
-            <span className="text-aurum-gold font-mono">${selectedAsset.price}</span>
+            <span className="text-aintrade-gold font-mono">${selectedAsset.price}</span>
           </h2>
 
           <div className="space-y-4 mb-8">
@@ -107,7 +107,7 @@ export default function InvestMarketPage() {
                   type="number" 
                   value={investAmount}
                   onChange={(e) => setInvestAmount(Number(e.target.value))}
-                  className="w-full bg-black/50 border border-white/10 rounded-xl py-3 pl-8 pr-4 text-white font-bold outline-none focus:border-aurum-gold transition"
+                  className="w-full bg-black/50 border border-white/10 rounded-xl py-3 pl-8 pr-4 text-white font-bold outline-none focus:border-aintrade-gold transition"
                 />
               </div>
             </div>
@@ -120,18 +120,18 @@ export default function InvestMarketPage() {
 
             {/* Deteksi Saldo Kurang -> Tawarkan Pinjaman */}
             {investAmount > userBalance && (
-              <div className={`p-4 rounded-xl border transition-all duration-300 ${useLoan ? 'bg-aurum-gold/10 border-aurum-gold/50' : 'bg-red-500/10 border-red-500/30'}`}>
+              <div className={`p-4 rounded-xl border transition-all duration-300 ${useLoan ? 'bg-aintrade-gold/10 border-aintrade-gold/50' : 'bg-red-500/10 border-red-500/30'}`}>
                 <div className="flex justify-between items-start mb-3">
                   <div className="flex items-center">
-                    <HandCoins className={`w-5 h-5 mr-2 ${useLoan ? 'text-aurum-gold' : 'text-red-400'}`} />
-                    <h3 className={`font-bold text-sm ${useLoan ? 'text-aurum-gold' : 'text-red-400'}`}>
+                    <HandCoins className={`w-5 h-5 mr-2 ${useLoan ? 'text-aintrade-gold' : 'text-red-400'}`} />
+                    <h3 className={`font-bold text-sm ${useLoan ? 'text-aintrade-gold' : 'text-red-400'}`}>
                       {useLoan ? 'Aurum Credit Applied' : 'Insufficient Balance'}
                     </h3>
                   </div>
                   {/* Toggle Switch */}
                   <div 
                     onClick={() => setUseLoan(!useLoan)}
-                    className={`w-10 h-5 rounded-full cursor-pointer relative transition-colors ${useLoan ? 'bg-aurum-gold' : 'bg-gray-700'}`}
+                    className={`w-10 h-5 rounded-full cursor-pointer relative transition-colors ${useLoan ? 'bg-aintrade-gold' : 'bg-gray-700'}`}
                   >
                     <div className={`w-3 h-3 bg-black rounded-full absolute top-1 transition-all ${useLoan ? 'left-6' : 'left-1'}`}></div>
                   </div>
@@ -160,7 +160,7 @@ export default function InvestMarketPage() {
             className={`w-full py-4 font-bold rounded-xl shadow-lg transition-all ${
               (!useLoan && investAmount > userBalance) 
                 ? 'bg-gray-800 text-gray-500 cursor-not-allowed' 
-                : 'bg-aurum-gold text-black hover:bg-aurum-goldLight hover:shadow-aurum-gold/30'
+                : 'bg-aintrade-gold text-black hover:bg-aintrade-goldLight hover:shadow-aintrade-gold/30'
             }`}
           >
             Confirm Invest

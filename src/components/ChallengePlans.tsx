@@ -54,7 +54,7 @@ export default function ChallengePlans() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Pilih <span className="text-aurum-gold">Funding Tiers</span> Anda
+            Pilih <span className="text-aintrade-gold">Funding Tiers</span> Anda
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Selesaikan evaluasi 1 tahap kami dan mulailah mengelola modal besar dengan ketentuan trading terbaik di industri.
@@ -70,11 +70,11 @@ export default function ChallengePlans() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className={`relative bg-aurum-panel/60 backdrop-blur-md rounded-2xl p-8 border ${
-                plan.recommended ? "border-aurum-gold" : "border-white/10"
-              } hover:border-aurum-gold/50 transition-colors duration-300 flex flex-col`}
+                plan.recommended ? "border-aintrade-gold" : "border-white/10"
+              } hover:border-aintrade-gold/50 transition-colors duration-300 flex flex-col`}
             >
               {plan.recommended && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-aurum-gold text-black text-xs font-bold px-4 py-1 rounded-full">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-aintrade-gold text-black text-xs font-bold px-4 py-1 rounded-full">
                   MOST POPULAR
                 </div>
               )}
@@ -88,8 +88,8 @@ export default function ChallengePlans() {
               <div className="space-y-4 mb-8 flex-1">
                 {plan.features.map((feature, i) => (
                   <div key={i} className="flex items-center space-x-3">
-                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-aurum-gold/20 flex items-center justify-center">
-                      <Check className="w-3 h-3 text-aurum-gold" />
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-aintrade-gold/20 flex items-center justify-center">
+                      <Check className="w-3 h-3 text-aintrade-gold" />
                     </div>
                     <span className="text-sm text-gray-300">{feature}</span>
                   </div>
@@ -98,7 +98,7 @@ export default function ChallengePlans() {
 
               <button className={`w-full py-4 rounded-lg font-bold transition-all duration-300 ${
                 plan.recommended 
-                  ? "bg-aurum-gold text-black hover:bg-aurum-goldLight shadow-[0_0_15px_rgba(212,175,55,0.4)]" 
+                  ? "bg-aintrade-gold text-black hover:bg-aintrade-goldLight shadow-[0_0_15px_rgba(212,175,55,0.4)]" 
                   : "bg-white/5 text-white border border-white/10 hover:bg-white/10"
               }`}>
                 Pilih {plan.name}

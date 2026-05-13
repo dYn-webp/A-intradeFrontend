@@ -5,7 +5,7 @@ export default function ProfilePage() {
   return (
     <div className="max-w-2xl space-y-8">
       <div className="flex items-center space-x-6 bg-aurum-panel border border-white/5 p-8 rounded-3xl">
-        <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-aurum-gold to-aurum-blue p-1">
+        <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-aintrade-gold to-aurum-blue p-1">
           <div className="w-full h-full rounded-full bg-aurum-dark flex items-center justify-center text-3xl font-bold">AA</div>
         </div>
         <div>
@@ -29,9 +29,9 @@ export default function ProfilePage() {
         </div>
       </div>
 
-      <div className="bg-aurum-gold/10 border border-aurum-gold/20 p-6 rounded-2xl flex justify-between items-center">
+      <div className="bg-aintrade-gold/10 border border-aintrade-gold/20 p-6 rounded-2xl flex justify-between items-center">
         <div>
-          <h4 className="font-bold text-aurum-gold text-sm">KYC Tier 2</h4>
+          <h4 className="font-bold text-aintrade-gold text-sm">KYC Tier 2</h4>
           <p className="text-xs text-gray-500">Maximum withdrawal limit: $500,000 / month</p>
         </div>
         <button className="text-xs font-bold text-white bg-white/10 px-4 py-2 rounded-lg">Upgrade</button>

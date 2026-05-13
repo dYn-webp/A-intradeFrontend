@@ -14,7 +14,7 @@ export default function CopyTrading() {
               <div className="w-12 h-12 rounded-full bg-gray-800 border border-white/10" />
               <div>
                 <div className="font-bold">Alpha Strategy #{i}</div>
-                <div className="text-xs text-aurum-gold flex items-center">
+                <div className="text-xs text-aintrade-gold flex items-center">
                   <TrendingUp className="w-3 h-3 mr-1" /> High Yield
                 </div>
               </div>

@@ -6,7 +6,7 @@ import { CurrencyProvider } from "@/components/CurrencyProvider"; // <-- Import 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Aurum Capital",
+  title: "A'intrade Capital",
   description: "Micro-Funding & Prop Trading Ecosystem",
 };
 

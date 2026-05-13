@@ -124,7 +124,7 @@ export default function LandingPage() {
   const { currency, toggleCurrency, formatMoney } = useCurrency();
 
   return (
-    <div className="bg-aurum-dark min-h-screen text-white font-sans selection:bg-aurum-gold selection:text-black overflow-x-hidden">
+    <div className="bg-aurum-dark min-h-screen text-white font-sans selection:bg-aintrade-gold selection:text-black overflow-x-hidden">
       
       {/* 1. Navbar */}
       <div className="fixed top-0 w-full z-50">
@@ -132,7 +132,7 @@ export default function LandingPage() {
         <nav className="border-b border-white/5 bg-aurum-dark/80 backdrop-blur-xl">
           <div className="container mx-auto px-6 h-16 flex items-center justify-between">
             <div className="text-xl font-black tracking-tighter flex items-center">
-              A'INTRADE<span className="text-aurum-gold text-2xl leading-[0]">.</span>
+              A'INTRADE<span className="text-aintrade-gold text-2xl leading-[0]">.</span>
             </div>
             <div className="hidden md:flex items-center space-x-8 text-xs font-bold text-gray-400 uppercase tracking-widest">
                <a href="#vision" className="hover:text-white transition">Vision</a>
@@ -144,7 +144,7 @@ export default function LandingPage() {
               <button onClick={toggleCurrency} className="flex items-center space-x-1 px-3 py-1.5 bg-black/50 border border-white/10 rounded-md text-xs font-bold text-gray-300 hover:text-white transition">
                 <Globe className="w-3 h-3" /><span>{currency}</span>
               </button>
-              <Link href="/dashboard" className="px-4 py-2 bg-aurum-gold text-black text-xs font-bold rounded-md hover:bg-aurum-goldLight transition shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+              <Link href="/dashboard" className="px-4 py-2 bg-aintrade-gold text-black text-xs font-bold rounded-md hover:bg-aintrade-goldLight transition shadow-[0_0_15px_rgba(212,175,55,0.3)]">
                 Launch App
               </Link>
             </div>
@@ -154,15 +154,15 @@ export default function LandingPage() {
 
       {/* 2. Hero Section */}
       <section className="relative pt-32 pb-20 min-h-[85vh] flex items-center">
-        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full blur-[120px] opacity-10 bg-aurum-gold pointer-events-none"></div>
+        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full blur-[120px] opacity-10 bg-aintrade-gold pointer-events-none"></div>
         <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-aurum-gold/30 bg-aurum-gold/10 text-aurum-gold text-xs font-bold">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-aintrade-gold/30 bg-aintrade-gold/10 text-aintrade-gold text-xs font-bold">
               <Heart className="w-3 h-3" /> <span>Dibangun untuk Trader Retail</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-tight mb-4">
               TRADING & INVESTASI.<br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-aurum-gold to-yellow-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-aintrade-gold to-yellow-600">
                 MULAI DARI {formatMoney(15000)}.
               </span>
             </h1>
@@ -177,7 +177,7 @@ export default function LandingPage() {
           {/* Interactive Micro-Panel */}
           <div className="bg-aurum-panel/90 backdrop-blur-xl border border-white/10 rounded-3xl p-6 relative shadow-2xl">
             <div className="flex bg-black/50 rounded-full p-1 border border-white/5 w-fit mb-6">
-              <button onClick={() => setActiveTab('trading')} className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${activeTab === 'trading' ? 'bg-aurum-gold text-black' : 'text-gray-400 hover:text-white'}`}>Micro Prop-Firm</button>
+              <button onClick={() => setActiveTab('trading')} className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${activeTab === 'trading' ? 'bg-aintrade-gold text-black' : 'text-gray-400 hover:text-white'}`}>Micro Prop-Firm</button>
               <button onClick={() => setActiveTab('invest')} className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${activeTab === 'invest' ? 'bg-aurum-blue text-white' : 'text-gray-400 hover:text-white'}`}>Dip-Funding Loan</button>
             </div>
 
@@ -185,14 +185,14 @@ export default function LandingPage() {
               {activeTab === 'trading' ? (
                 <motion.div key="trading" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-5">
                   <div className="flex justify-between items-center border-b border-white/5 pb-4">
-                    <div className="flex items-center space-x-2"><BarChart3 className="text-aurum-gold w-5 h-5" /><h3 className="font-bold text-sm">Simulasi (Biaya: {formatMoney(15000)})</h3></div>
+                    <div className="flex items-center space-x-2"><BarChart3 className="text-aintrade-gold w-5 h-5" /><h3 className="font-bold text-sm">Simulasi (Biaya: {formatMoney(15000)})</h3></div>
                     <span className="text-xs bg-white/5 px-2 py-1 rounded text-white font-mono">Saldo: {formatMoney(500000)}</span>
                   </div>
                   <div className="grid grid-cols-2 gap-3">
                     <div className="p-3 bg-black/40 rounded-xl border border-white/5"><div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Target Profit</div><div className="text-base font-bold text-green-500">+{formatMoney(40000)}</div></div>
                     <div className="p-3 bg-black/40 rounded-xl border border-white/5"><div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Max Loss</div><div className="text-base font-bold text-red-500">-{formatMoney(50000)}</div></div>
                   </div>
-                  <div className="p-3 bg-aurum-gold/10 rounded-xl border border-aurum-gold/20 text-xs font-bold flex justify-between"><span className="text-aurum-gold">Bagi Hasil</span><span className="text-white">Hingga 80% ke rekening Anda</span></div>
+                  <div className="p-3 bg-aintrade-gold/10 rounded-xl border border-aintrade-gold/20 text-xs font-bold flex justify-between"><span className="text-aintrade-gold">Bagi Hasil</span><span className="text-white">Hingga 80% ke rekening Anda</span></div>
                 </motion.div>
               ) : (
                 <motion.div key="invest" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-5">
@@ -217,7 +217,7 @@ export default function LandingPage() {
       {/* 3. Visi Misi */}
       <section id="vision" className="py-20 border-y border-white/5 bg-black/50">
         <div className="container mx-auto px-6 max-w-4xl text-center">
-          <Target className="w-12 h-12 text-aurum-gold mx-auto mb-6" />
+          <Target className="w-12 h-12 text-aintrade-gold mx-auto mb-6" />
           <h2 className="text-3xl font-bold mb-6">Misi Kami: Menghapus Rasa Takut.</h2>
           <p className="text-gray-400 text-lg leading-relaxed mb-8">
             Dunia finansial global terlalu kejam bagi yang pas-pasan. Uang jutaan bisa hilang dalam sekejap. A'intrade lahir dengan satu misi: <strong>Memberikan ruang aman bagi Anda untuk belajar, gagal, dan bangkit berinvestasi hanya dengan uang sisa jajan.</strong>
@@ -229,7 +229,7 @@ export default function LandingPage() {
               <p className="text-xs text-gray-500">Maksimal kerugian Anda hanyalah biaya pendaftaran seharga semangkuk mie instan.</p>
             </div>
             <div className="bg-aurum-panel border border-white/5 p-6 rounded-2xl">
-              <Zap className="w-6 h-6 text-aurum-gold mb-3" />
+              <Zap className="w-6 h-6 text-aintrade-gold mb-3" />
               <h4 className="font-bold mb-2">Payout Nyata (IDR / Kripto)</h4>
               <p className="text-xs text-gray-500">Lolos evaluasi mikro, profit Anda kami transfer langsung ke e-Wallet / rekening lokal.</p>
             </div>
@@ -244,8 +244,8 @@ export default function LandingPage() {
 
       {/* 4. The Founder Story (Core Narrative) */}
       <section id="founder" className="py-24 container mx-auto px-6">
-        <div className="bg-gradient-to-br from-aurum-panel to-black border border-aurum-gold/20 rounded-3xl p-8 md:p-12 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-aurum-gold/10 blur-[80px]"></div>
+        <div className="bg-gradient-to-br from-aurum-panel to-black border border-aintrade-gold/20 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-aintrade-gold/10 blur-[80px]"></div>
           
           <div className="flex flex-col md:flex-row gap-12 relative z-10 items-center">
             <div className="w-full md:w-1/3">
@@ -255,17 +255,17 @@ export default function LandingPage() {
                   
                   <div className="relative z-20">
                     <h4 className="font-bold text-2xl text-white">Adinda Ardiansyah</h4>
-                    <p className="text-sm text-aurum-gold mb-4">Founder & System Architect</p>
+                    <p className="text-sm text-aintrade-gold mb-4">Founder & System Architect</p>
                     <div className="flex space-x-2">
                       <span className="px-2 py-1 bg-white/10 rounded text-[10px] text-gray-300 flex items-center"><Coffee className="w-3 h-3 mr-1" /> Ex-Pramusaji</span>
-                      <span className="px-2 py-1 bg-aurum-gold/10 text-aurum-gold rounded text-[10px] flex items-center"><Cpu className="w-3 h-3 mr-1" /> Mandor AI</span>
+                      <span className="px-2 py-1 bg-aintrade-gold/10 text-aintrade-gold rounded text-[10px] flex items-center"><Cpu className="w-3 h-3 mr-1" /> Mandor AI</span>
                     </div>
                   </div>
                </div>
             </div>
 
             <div className="flex-1 space-y-6">
-              <Quote className="w-10 h-10 text-aurum-gold/30" />
+              <Quote className="w-10 h-10 text-aintrade-gold/30" />
               <h2 className="text-3xl md:text-4xl font-bold leading-tight">"Dari Nampan Pramusaji,<br/>Menuju Arsitektur Finansial."</h2>
               <div className="space-y-4 text-gray-400 text-sm md:text-base leading-relaxed">
                 <p>
@@ -290,9 +290,9 @@ export default function LandingPage() {
           <p className="text-gray-400 text-sm mb-12">Tidak ada direktur berjas mahal. Hanya dedikasi dan efisiensi teknologi mutakhir.</p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-8 border border-aurum-gold/30 bg-aurum-gold/5 rounded-2xl flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full bg-aurum-gold/20 flex items-center justify-center mb-4 border-2 border-aurum-gold">
-                <Users className="w-8 h-8 text-aurum-gold" />
+            <div className="p-8 border border-aintrade-gold/30 bg-aintrade-gold/5 rounded-2xl flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-aintrade-gold/20 flex items-center justify-center mb-4 border-2 border-aintrade-gold">
+                <Users className="w-8 h-8 text-aintrade-gold" />
               </div>
               <h3 className="font-bold text-xl mb-2">The Human Visionary</h3>
               <p className="text-sm text-gray-400 leading-relaxed text-center">
@@ -316,7 +316,7 @@ export default function LandingPage() {
       {/* 6. Real Community (Testimonial Micro-Trader) */}
       <section id="community" className="py-24 container mx-auto px-6">
          <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Mereka yang Sudah <span className="text-aurum-gold">Membuktikan</span></h2>
+          <h2 className="text-3xl font-bold mb-4">Mereka yang Sudah <span className="text-aintrade-gold">Membuktikan</span></h2>
           <p className="text-gray-400">Komunitas *early adopter* yang berani melangkah dengan modal receh.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -332,7 +332,7 @@ export default function LandingPage() {
                 <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-gray-700 to-black border border-white/10 flex items-center justify-center font-bold text-xs">{t.name.charAt(0)}</div>
                 <div>
                   <div className="font-bold text-sm">{t.name}</div>
-                  <div className="text-[10px] text-aurum-gold">{t.role}</div>
+                  <div className="text-[10px] text-aintrade-gold">{t.role}</div>
                 </div>
               </div>
             </div>
@@ -343,7 +343,7 @@ export default function LandingPage() {
       {/* 7. Footer */}
       <footer className="py-8 border-t border-white/5 bg-black text-center">
         <div className="container mx-auto px-6">
-          <div className="text-lg font-black mb-2">A'INTRADE<span className="text-aurum-gold">.</span> </div>
+          <div className="text-lg font-black mb-2">A'INTRADE<span className="text-aintrade-gold">.</span> </div>
           <p className="text-gray-500 text-xs mb-4">Membangun Kekuatan Finansial Pemuda Indonesia.</p>
           <div className="max-w-3xl mx-auto text-[10px] text-gray-600 leading-relaxed text-justify">
             <strong>Catatan Pendiri:</strong> Platform ini adalah bukti bahwa keterbatasan modal bukanlah akhir dari segalanya. Sistem ini beroperasi menggunakan *micro-liquidity pool* pribadi. Semua aturan dibuat seadil mungkin. Jika Anda mencari skema cepat kaya, platform ini BUKAN untuk Anda. Namun jika Anda ingin berlatih dan berkembang dengan risiko seminimal mungkin, selamat datang di rumah.

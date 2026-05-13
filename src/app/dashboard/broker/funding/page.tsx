@@ -17,11 +17,11 @@ export default function FundingPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {methods.map((m) => (
-          <div key={m.name} className="bg-aurum-panel border border-white/5 p-6 rounded-2xl hover:border-aurum-gold/50 cursor-pointer transition group">
-            <m.icon className="w-8 h-8 text-aurum-gold mb-4" />
+          <div key={m.name} className="bg-aurum-panel border border-white/5 p-6 rounded-2xl hover:border-aintrade-gold/50 cursor-pointer transition group">
+            <m.icon className="w-8 h-8 text-aintrade-gold mb-4" />
             <div className="font-bold mb-1">{m.name}</div>
             <div className="text-xs text-gray-500 mb-4">{m.desc}</div>
-            <div className="flex items-center text-xs text-aurum-gold font-bold opacity-0 group-hover:opacity-100 transition">
+            <div className="flex items-center text-xs text-aintrade-gold font-bold opacity-0 group-hover:opacity-100 transition">
               Select Method <ArrowRight className="w-3 h-3 ml-1" />
             </div>
           </div>

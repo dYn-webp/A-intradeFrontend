@@ -67,7 +67,7 @@ export default function Sidebar() {
       {/* Logo Area */}
       <div className="h-20 flex-shrink-0 flex items-center px-8 border-b border-white/5 bg-aurum-dark/50">
         <div className="text-2xl font-bold tracking-tighter text-white">
-          AURUM<span className="text-aurum-gold">.</span>
+          AURUM<span className="text-aintrade-gold">.</span>
         </div>
       </div>
 
@@ -89,11 +89,11 @@ export default function Sidebar() {
                     href={item.href}
                     className={`flex items-center space-x-3 px-4 py-2.5 rounded-xl transition-all duration-200 group ${
                       isActive 
-                        ? "bg-gradient-to-r from-aurum-gold/10 to-transparent text-aurum-gold border-l-2 border-aurum-gold" 
+                        ? "bg-gradient-to-r from-aintrade-gold/10 to-transparent text-aintrade-gold border-l-2 border-aintrade-gold" 
                         : "text-gray-400 hover:text-white hover:bg-white/5 border-l-2 border-transparent"
                     }`}
                   >
-                    <Icon className={`w-4 h-4 ${isActive ? "text-aurum-gold" : "text-gray-500 group-hover:text-gray-300"}`} />
+                    <Icon className={`w-4 h-4 ${isActive ? "text-aintrade-gold" : "text-gray-500 group-hover:text-gray-300"}`} />
                     <span className="font-medium text-sm">{item.label}</span>
                   </Link>
                 );
