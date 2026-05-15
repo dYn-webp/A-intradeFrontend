@@ -17,7 +17,7 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
 
   // Pemisahan Kategori Menu yang Tegas
   const propFirmMenu = [
-    { name: "Terminal Trading", icon: LayoutDashboard, path: "/dashboard" },
+    { name: "Dashboard", icon: LayoutDashboard, path: "/dashboard" },
     { name: "Micro Challenges", icon: Trophy, path: "/dashboard/prop/challenges" },
     { name: "Risk Manager", icon: Shield, path: "/dashboard/prop/risk" },
   ];
